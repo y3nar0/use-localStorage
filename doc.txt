@@ -1,0 +1,66 @@
+Local Storage pertenece a la API de JavaScript
+
+>window.localStorage
+
+Es una API sencilla, ya que solo es una clave y un valor
+clave: como vamos a obtener ese valor, como vamos hacer referencia a ellos
+valor: lo que puede cambiar, diferentes valores
+localStorage.setItem('clave', 'valor')
+
+localStorage.setItem('nombre', 'Yenaro')
+
+desde el momento en el que se ejecuta el documento, ya se agrega al
+localStorage, en Chrome lo encontramos en la ventana de desarrolladores
+>>Aplication -> Storage -> Local Storage
+>>Aplication -> Storage -> Session Storage
+
+Local Storage - Es persistente, podemos cerrar y abrir el navegador
+		y los datos no se perderan
+Session Storage - Los datos se pierden cuando se cierra el navegador
+
+
+Ambos guardan los datos como String
+
+	const producto = {
+		nombre: "Monitor 24 Pulgadas",
+		precio: 300
+	}
+
+	const productoString = JSON.stringify(producto)
+
+	localStorage.setItem('producto', productoString)
+
+
+
+	const meses = ['Enero', 'Febrero', 'Marzo']
+
+	const mesesString = JSON.stringify(meses)
+
+	localStorage.setItem('meses', mesesString)
+
+
+
+
+Para obtener los valores de un Local Storage
+
+const productoJSON = localStorage.getItem('producto')
+console.log( JSON.parse(productoJSON) )
+
+const meses = localStorage.getItem('meses')
+const mesesArray = JSON.parse(meses)
+console.log(mesesArray)
+
+
+
+
+Para eliminar elementos de un Local Storage
+
+localStorage.removeItem('productos') // <-- Eliminar
+localStorage.clear() // <-- Limpia el Local Storage
+
+para 'actualizar' un elemento es sobreescribiendo el elemento
+
+
+
+
+
